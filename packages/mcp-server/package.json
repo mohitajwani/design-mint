@@ -1,0 +1,29 @@
+{
+  "name": "@designmint/mcp-server",
+  "version": "0.1.0",
+  "description": "MCP server for DesignMint — AI agents can generate design systems, query tokens, get component guidance, and run a11y audits",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "type": "module",
+  "bin": {
+    "designmint-mcp": "./dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "test": "node --test dist/**/*.test.js",
+    "clean": "rm -rf dist",
+    "typecheck": "tsc --noEmit",
+    "start": "node dist/index.js"
+  },
+  "dependencies": {
+    "@designmint/core": "*",
+    "@modelcontextprotocol/sdk": "^1.12.0",
+    "zod": "^3.23.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.0"
+  },
+  "author": "Mohit Ajwani",
+  "license": "MIT"
+}

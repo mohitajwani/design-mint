@@ -1,0 +1,23 @@
+{
+  "name": "@designmint/figma-sync",
+  "version": "0.1.0",
+  "description": "Figma integration for DesignMint — export design tokens to Figma Variables and Tokens Studio format",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "test": "node --test dist/**/*.test.js",
+    "clean": "rm -rf dist",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@designmint/core": "*"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.0"
+  },
+  "author": "Mohit Ajwani",
+  "license": "MIT"
+}
