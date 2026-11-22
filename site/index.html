@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DesignMint — Interactive Design System Experience</title>
+  <meta name="description" content="Mint your design system in minutes. Interactive accessibility-first design token generator and component studio.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Top Navigation -->
+  <header class="navbar">
+    <div class="nav-brand">
+      <span class="brand-logo">🌿</span>
+      <span class="brand-title">DesignMint</span>
+      <span class="badge badge-accent">Studio Experience</span>
+    </div>
+    <div class="nav-actions">
+      <!-- Theme Switcher -->
+      <div class="theme-toggle-group">
+        <button id="theme-light-btn" class="theme-btn active" title="Light Theme">☀️ Light</button>
+        <button id="theme-dark-btn" class="theme-btn" title="Dark Theme">🌙 Dark</button>
+        <button id="theme-hc-btn" class="theme-btn" title="High Contrast Mode (WCAG AAA)">⚡ High Contrast</button>
+      </div>
+      <a href="https://github.com/mohitajwani/design-mint" target="_blank" class="btn btn-outline btn-sm">GitHub ↗</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Hero Header -->
+    <section class="hero">
+      <h1 class="hero-title">Mint your design system in minutes.</h1>
+      <p class="hero-sub">
+        AI UIs all look the same. <strong>DesignMint</strong> generates a bespoke, branded token system with WCAG 2.2 AA/AAA compliance, built-in components, and native exports for Web, Compose Multiplatform, iOS, Flutter, and Figma.
+      </p>
+    </section>
+
+    <!-- Studio Interactive Controls -->
+    <section class="studio-controls card">
+      <div class="control-row">
+        <!-- Color Preset Selector -->
+        <div class="control-col">
+          <label class="control-label" for="primary-picker">Primary Brand Color</label>
+          <div class="color-picker-wrapper">
+            <input type="color" id="primary-picker" value="#2563EB">
+            <input type="text" id="primary-hex" value="#2563EB" class="hex-input" maxlength="7">
+          </div>
+          <div class="preset-chips">
+            <button class="color-chip active" data-color="#2563EB" style="background: #2563EB;" title="Tech Blue"></button>
+            <button class="color-chip" data-color="#7C3AED" style="background: #7C3AED;" title="Purple Royale"></button>
+            <button class="color-chip" data-color="#059669" style="background: #059669;" title="Emerald"></button>
+            <button class="color-chip" data-color="#E11D48" style="background: #E11D48;" title="Crimson"></button>
+            <button class="color-chip" data-color="#D97706" style="background: #D97706;" title="Amber"></button>
+            <button class="color-chip" data-color="#0284C7" style="background: #0284C7;" title="Cyan"></button>
+          </div>
+        </div>
+
+        <!-- Live Contrast Meter -->
+        <div class="control-col a11y-meter-col">
+          <label class="control-label">Live WCAG Contrast Meter</label>
+          <div class="contrast-score-card">
+            <div class="contrast-number-row">
+              <span class="contrast-val" id="contrast-ratio">5.17:1</span>
+              <span class="badge badge-success" id="contrast-badge">WCAG AA Pass</span>
+            </div>
+            <div class="contrast-subtext" id="contrast-status">
+              Exceeds 4.5:1 minimum required for normal body text
+            </div>
+          </div>
+        </div>
+
+        <!-- Color Blindness Simulator -->
+        <div class="control-col">
+          <label class="control-label" for="cb-sim-select">Perception Simulator</label>
+          <select id="cb-sim-select" class="form-select">
+            <option value="none">Normal Trichromatic Vision</option>
+            <option value="protanopia">Protanopia (Red-weak / blind)</option>
+            <option value="deuteranopia">Deuteranopia (Green-weak / blind)</option>
+            <option value="tritanopia">Tritanopia (Blue-weak / blind)</option>
+            <option value="achromatopsia">Achromatopsia (Monochrome)</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Generated 11-step Color Palette Bar -->
+      <div class="palette-preview-section">
+        <div class="palette-header">
+          <span class="text-sm font-semibold">Generated HSL Scale (50 — 950)</span>
+          <span class="text-xs text-muted" id="palette-info">11 mathematically balanced steps</span>
+        </div>
+        <div class="palette-strip" id="palette-strip">
+          <!-- Dynamically populated by app.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Component Playground -->
+    <section class="section">
+      <h2 class="section-title">Component Showcase</h2>
+      <p class="section-desc">Experience your design tokens rendered across built-in accessible components in real time.</p>
+
+      <div class="component-grid">
+        <!-- Card 1: Buttons -->
+        <div class="card comp-card">
+          <h3 class="comp-title">Actions &amp; Buttons</h3>
+          <p class="comp-desc">Min 44px mobile touch target • WAI-ARIA role="button" • Enter / Space keys</p>
+          <div class="comp-demo-row">
+            <button class="btn btn-primary" id="demo-btn-primary">Primary Action</button>
+            <button class="btn btn-secondary">Secondary</button>
+            <button class="btn btn-outline">Outline</button>
+            <button class="btn btn-ghost">Ghost</button>
+            <button class="btn btn-destructive">Destructive</button>
+          </div>
+        </div>
+
+        <!-- Card 2: Form Inputs -->
+        <div class="card comp-card">
+          <h3 class="comp-title">Form Controls</h3>
+          <p class="comp-desc">Accessible labels • Clear focus indicator • Error validation state</p>
+          <div class="comp-demo-col">
+            <div class="form-group">
+              <label class="form-label" for="input-email">Email Address <span class="text-danger">*</span></label>
+              <input type="email" id="input-email" class="form-input" placeholder="e.g. alex@example.com" value="alex.taylor@company.com">
+              <span class="form-helper">We will send design system exports here.</span>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="select-role">Platform Target</label>
+              <select id="select-role" class="form-select">
+                <option>Compose Multiplatform (Android, iOS, Desktop, Web)</option>
+                <option>Web (CSS Custom Properties &amp; Tailwind)</option>
+                <option>iOS (SwiftUI &amp; Dynamic Type)</option>
+                <option>Flutter (ThemeData &amp; ColorScheme)</option>
+                <option>Figma Variables &amp; Tokens Studio</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3: Selection Controls -->
+        <div class="card comp-card">
+          <h3 class="comp-title">Selection Controls</h3>
+          <p class="comp-desc">Haptic feedback • role="switch" &amp; role="checkbox" • Accessible contrast</p>
+          <div class="comp-demo-col space-y-md">
+            <label class="checkbox-label">
+              <input type="checkbox" checked class="dm-checkbox">
+              <span>Enable reduced-motion preference overrides</span>
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" class="dm-checkbox">
+              <span>Automate Figma token sync via GitHub Actions</span>
+            </label>
+            <div class="toggle-wrapper">
+              <label class="toggle-switch">
+                <input type="checkbox" checked id="demo-toggle">
+                <span class="toggle-slider"></span>
+              </label>
+              <span class="text-sm font-medium">Auto-apply dark theme at sunset</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4: Navigation Tabs -->
+        <div class="card comp-card">
+          <h3 class="comp-title">Navigation Tabs</h3>
+          <p class="comp-desc">WAI-ARIA tablist pattern • Arrow key traversal • role="tabpanel"</p>
+          <div class="tabs-wrapper">
+            <div class="tab-list" role="tablist">
+              <button class="tab-item active" data-tab="tab-overview" role="tab" aria-selected="true">Tokens</button>
+              <button class="tab-item" data-tab="tab-cmp" role="tab" aria-selected="false">Compose Multiplatform</button>
+              <button class="tab-item" data-tab="tab-figma" role="tab" aria-selected="false">Figma Sync</button>
+            </div>
+            <div class="tab-content active" id="tab-overview">
+              <p class="text-sm">Tokens are reactive and automatically cascade into spacing, typography, and semantic color scales.</p>
+            </div>
+            <div class="tab-content" id="tab-cmp">
+              <p class="text-sm">Exports ready-to-use <code>Theme.kt</code>, <code>Color.kt</code>, and <code>Typography.kt</code> in <code>commonMain</code> targeting Android, iOS, Desktop, and Web.</p>
+            </div>
+            <div class="tab-content" id="tab-figma">
+              <p class="text-sm">Synchronize with Figma Variables and Tokens Studio using the W3C Design Tokens Community Group specification.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 5: Badges & Chips -->
+        <div class="card comp-card">
+          <h3 class="comp-title">Badges &amp; Filter Chips</h3>
+          <p class="comp-desc">Information not reliant solely on color • Interactive &amp; dismissible</p>
+          <div class="comp-demo-col space-y-sm">
+            <div class="flex-wrap-row">
+              <span class="badge badge-success">✓ Verified Compliant</span>
+              <span class="badge badge-warning">⚠ Contrast Warning</span>
+              <span class="badge badge-error">✕ Missing Role</span>
+              <span class="badge badge-info">ℹ WCAG 2.2</span>
+            </div>
+            <div class="flex-wrap-row">
+              <button class="chip active">Design Tokens <span class="chip-close">✕</span></button>
+              <button class="chip">Compose Multiplatform</button>
+              <button class="chip">Figma Variables</button>
+              <button class="chip">+ Add Tag</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 6: Alert Notification -->
+        <div class="card comp-card">
+          <h3 class="comp-title">Feedback &amp; Alerts</h3>
+          <p class="comp-desc">Polite live region • Clear semantic icon • WCAG compliant text</p>
+          <div class="alert alert-success">
+            <span class="alert-icon">✓</span>
+            <div class="alert-body">
+              <h4 class="alert-title">Design system ready to deploy</h4>
+              <p class="alert-text">All 15 built-in components and token scales meet target accessibility level.</p>
+            </div>
+          </div>
+          <div style="margin-top: 12px;">
+            <button class="btn btn-outline btn-sm" id="open-modal-btn">Open Accessible Modal Dialog</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Multi-Platform Code Exporter -->
+    <section class="section">
+      <h2 class="section-title">Multi-Platform Code Output</h2>
+      <p class="section-desc">Instantly inspect and copy token code compiled for your tech stack.</p>
+
+      <div class="code-export-box card">
+        <div class="code-nav-bar">
+          <div class="code-tabs">
+            <button class="code-tab-btn active" data-code="css">CSS Variables</button>
+            <button class="code-tab-btn" data-code="tailwind">Tailwind Config</button>
+            <button class="code-tab-btn" data-code="cmp">Compose Multiplatform</button>
+            <button class="code-tab-btn" data-code="swift">iOS (SwiftUI)</button>
+            <button class="code-tab-btn" data-code="flutter">Flutter (Dart)</button>
+            <button class="code-tab-btn" data-code="json">W3C DTCG (JSON)</button>
+          </div>
+          <button class="copy-btn" id="copy-code-btn">📋 Copy Code</button>
+        </div>
+        <pre class="code-block"><code id="code-display">/* Generating tokens... */</code></pre>
+      </div>
+    </section>
+
+    <!-- Figma Architecture & Sync -->
+    <section class="section">
+      <h2 class="section-title">Figma Synchronization</h2>
+      <p class="section-desc">Align engineering and product design teams with zero manual handoff friction.</p>
+
+      <div class="card figma-showcase-card">
+        <div class="figma-grid">
+          <div class="figma-col">
+            <h3>🎨 Figma Variables Collections</h3>
+            <p class="text-sm text-muted">Directly imports into Figma Variables with Mode support:</p>
+            <ul class="spec-list">
+              <li><strong>Modes</strong>: <code>Light</code>, <code>Dark</code>, <code>High Contrast</code></li>
+              <li><strong>Colors</strong>: Canvas background, surface, primary action, border, text</li>
+              <li><strong>Dimensions</strong>: Spacing-1 (4px) through Spacing-20 (80px)</li>
+              <li><strong>Corner Radii</strong>: Sharp (0px), Rounded (8px), Pill (9999px)</li>
+            </ul>
+          </div>
+          <div class="figma-col">
+            <h3>🔄 Tokens Studio Sync</h3>
+            <p class="text-sm text-muted">Standardized W3C Design Tokens format for automated CI/CD:</p>
+            <div class="code-mini-preview">
+              <code>{ "$themes": [{ "name": "Light" }, { "name": "Dark" }], "global": { "colors": { "primary": { "500": { "$value": "#2563EB", "$type": "color" } } } } }</code>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Modal Dialog -->
+  <div class="modal-backdrop" id="demo-modal" role="dialog" aria-modal="true" aria-labelledby="modal-heading" hidden>
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 id="modal-heading" class="modal-title">Confirm Design System Export</h3>
+        <button class="modal-close-btn" id="close-modal-btn" aria-label="Close dialog">✕</button>
+      </div>
+      <div class="modal-body">
+        <p>This modal demonstrates WAI-ARIA dialog accessibility: focus is trapped inside, the background is inert, and pressing the <strong>Escape</strong> key closes it and returns focus to the trigger.</p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-ghost" id="cancel-modal-btn">Cancel</button>
+        <button class="btn btn-primary" id="confirm-modal-btn">Confirm Export</button>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>DesignMint — Released under MIT License © 2026 Mohit Ajwani. Built for human developers and AI agents alike.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<svg width="1000" height="340" viewBox="0 0 1000 340" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1000" height="340" rx="16" fill="#0B0F19"/>
+
+  <text x="40" y="45" fill="#FFFFFF" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="700">🎨 Figma Synchronization Architecture</text>
+  <text x="40" y="70" fill="#64748B" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13">Seamless bi-directional token mapping between code and Figma Variables</text>
+
+  <!-- Box 1: DesignMint Core -->
+  <g transform="translate(60, 110)">
+    <rect width="240" height="170" rx="12" fill="#131B2E" stroke="#3B82F6" stroke-width="1.5"/>
+    <text x="24" y="38" fill="#60A5FA" font-family="sans-serif" font-size="14" font-weight="700">🌿 DesignMint Engine</text>
+    <rect x="24" y="55" width="192" height="28" rx="6" fill="#1E293B"/>
+    <text x="36" y="74" fill="#E2E8F0" font-family="monospace" font-size="11">Color Scales (50-950)</text>
+    <rect x="24" y="90" width="192" height="28" rx="6" fill="#1E293B"/>
+    <text x="36" y="109" fill="#E2E8F0" font-family="monospace" font-size="11">Spacing (4px grid)</text>
+    <rect x="24" y="125" width="192" height="28" rx="6" fill="#1E293B"/>
+    <text x="36" y="144" fill="#E2E8F0" font-family="monospace" font-size="11">Themes: Light/Dark/HC</text>
+  </g>
+
+  <!-- Arrow 1 -->
+  <g transform="translate(320, 185)">
+    <line x1="0" y1="0" x2="60" y2="0" stroke="#3B82F6" stroke-width="2" stroke-dasharray="4 4"/>
+    <polygon points="60,-5 70,0 60,5" fill="#3B82F6"/>
+    <text x="5" y="-12" fill="#93C5FD" font-family="sans-serif" font-size="11" font-weight="600">Export</text>
+  </g>
+
+  <!-- Box 2: Sync Layer -->
+  <g transform="translate(410, 110)">
+    <rect width="240" height="170" rx="12" fill="#131B2E" stroke="#8B5CF6" stroke-width="1.5"/>
+    <text x="24" y="38" fill="#A78BFA" font-family="sans-serif" font-size="14" font-weight="700">🔄 @designmint/figma-sync</text>
+    <rect x="24" y="55" width="192" height="42" rx="6" fill="#1E293B"/>
+    <text x="34" y="75" fill="#E2E8F0" font-family="sans-serif" font-size="11" font-weight="600">Figma Variables API</text>
+    <text x="34" y="90" fill="#94A3B8" font-family="monospace" font-size="10">Modes: Light, Dark, HC</text>
+    <rect x="24" y="108" width="192" height="42" rx="6" fill="#1E293B"/>
+    <text x="34" y="128" fill="#E2E8F0" font-family="sans-serif" font-size="11" font-weight="600">Tokens Studio Plugin</text>
+    <text x="34" y="143" fill="#94A3B8" font-family="monospace" font-size="10">W3C DTCG Standard</text>
+  </g>
+
+  <!-- Arrow 2 -->
+  <g transform="translate(670, 185)">
+    <line x1="0" y1="0" x2="60" y2="0" stroke="#8B5CF6" stroke-width="2" stroke-dasharray="4 4"/>
+    <polygon points="60,-5 70,0 60,5" fill="#8B5CF6"/>
+    <text x="5" y="-12" fill="#C4B5FD" font-family="sans-serif" font-size="11" font-weight="600">Sync</text>
+  </g>
+
+  <!-- Box 3: Figma Workspace -->
+  <g transform="translate(750, 110)">
+    <rect width="200" height="170" rx="12" fill="#131B2E" stroke="#EC4899" stroke-width="1.5"/>
+    <text x="24" y="38" fill="#F472B6" font-family="sans-serif" font-size="14" font-weight="700">🎨 Figma Workspace</text>
+    <rect x="24" y="55" width="152" height="28" rx="6" fill="#1E293B"/>
+    <text x="34" y="74" fill="#E2E8F0" font-family="sans-serif" font-size="11">Color Variables</text>
+    <rect x="24" y="90" width="152" height="28" rx="6" fill="#1E293B"/>
+    <text x="34" y="109" fill="#E2E8F0" font-family="sans-serif" font-size="11">Number Spacing</text>
+    <rect x="24" y="125" width="152" height="28" rx="6" fill="#1E293B"/>
+    <text x="34" y="144" fill="#E2E8F0" font-family="sans-serif" font-size="11">Tokens Studio</text>
+  </g>
+</svg>
