@@ -1,0 +1,35 @@
+# Corporate / Enterprise Design System Preset
+name: "Apex Financial"
+description: "Authoritative, dependable corporate design system"
+
+colors:
+  primary: "#1E40AF"         # Deep Navy Blue
+  secondary: "#0F766E"       # Teal
+  accent: "#D97706"          # Deep Gold
+  neutral: "#475569"         # Slate
+
+typography:
+  headingFont: "Plus Jakarta Sans"
+  bodyFont: "Roboto"
+  monoFont: "Fira Code"
+  baseSize: 16
+  scaleRatio: 1.25
+
+spacing:
+  base: 4
+  scaleType: "linear"
+
+borders:
+  radius: "slightly-rounded" # 4px corners
+
+accessibility:
+  compliance: "AAA"          # Financial/Enterprise strict 7:1 contrast
+  themes: ["light", "dark", "high-contrast"]
+  reducedMotion: true
+  minTouchTargetPx: 48       # Spacious Material standard
+  colorBlindSafe: true
+
+preferences:
+  mode: "all"
+  density: "comfortable"
+  style: "corporate"

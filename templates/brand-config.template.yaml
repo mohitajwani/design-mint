@@ -1,0 +1,59 @@
+# ==============================================================================
+# DesignMint Brand Configuration Template
+# ==============================================================================
+# Use this prescribed template to define your brand identity with precision.
+# Run: `designmint generate --config designmint.config.yaml`
+# ==============================================================================
+
+brand:
+  name: "Acme Corporation"
+  description: "Modern cloud and analytics platform"
+  website: "https://example.com" # Optional website for contextual metadata
+
+  # Brand Color Palette
+  # Primary is required (valid hex). Other scales are auto-generated if omitted.
+  colors:
+    primary: "#2563EB"       # Your core brand color (Blue)
+    secondary: "#7C3AED"     # Complementary / secondary brand color (Purple)
+    accent: "#F59E0B"        # Attention-grabbing highlights (Amber)
+    neutral: "#64748B"       # Base tone for grays and borders (Slate)
+    # Optional semantic overrides (defaults to accessible WCAG-tested values):
+    success: "#10B981"       # Positive confirmation / success
+    warning: "#F59E0B"       # Cautionary alerts
+    error: "#EF4444"         # Destructive / error states
+    info: "#3B82F6"          # Informational banners
+
+  # Typography
+  # Free Google Fonts catalog or custom font names
+  typography:
+    headingFont: "Plus Jakarta Sans" # Modern geometric sans for titles
+    bodyFont: "Inter"                # Highly legible neutral body font
+    monoFont: "JetBrains Mono"       # Monospace for code and numeric data
+    baseSize: 16                     # Base font size in px
+    scaleRatio: 1.25                 # Major Third type scale ratio (1.25)
+
+  # Spacing System
+  spacing:
+    base: 4                          # 4px baseline grid
+    scaleType: "linear"              # linear | fibonacci | golden-ratio
+
+  # Border & Radius
+  borders:
+    radius: "rounded"                # sharp | slightly-rounded | rounded | pill
+
+  # ♿ Accessibility Compliance & Themes
+  accessibility:
+    compliance: "AA"                 # Target WCAG 2.2 standard: AA (4.5:1) | AAA (7.0:1)
+    themes:                          # Themes to generate
+      - "light"
+      - "dark"
+      - "high-contrast"
+    reducedMotion: true              # Generate @media (prefers-reduced-motion) overrides
+    minTouchTargetPx: 44             # Mobile touch target min size (WCAG 2.5.8 = 44px)
+    colorBlindSafe: true             # Validate semantic colors for protanopia & deuteranopia
+
+  # Design Persona & Density
+  preferences:
+    mode: "all"                      # light | dark | both | all
+    density: "comfortable"           # compact | comfortable | spacious
+    style: "modern"                  # minimal | modern | playful | corporate

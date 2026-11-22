@@ -1,0 +1,35 @@
+# Minimalist Design System Preset
+name: "Minimal Studio"
+description: "Monochrome, high-legibility minimalist design system"
+
+colors:
+  primary: "#18181B"         # Zinc 900
+  secondary: "#71717A"       # Zinc 500
+  accent: "#09090B"
+  neutral: "#71717A"
+
+typography:
+  headingFont: "Inter"
+  bodyFont: "Inter"
+  monoFont: "JetBrains Mono"
+  baseSize: 15
+  scaleRatio: 1.2
+
+spacing:
+  base: 4
+  scaleType: "linear"
+
+borders:
+  radius: "sharp"            # Sharp 0px corners
+
+accessibility:
+  compliance: "AA"
+  themes: ["light", "dark", "high-contrast"]
+  reducedMotion: true
+  minTouchTargetPx: 44
+  colorBlindSafe: true
+
+preferences:
+  mode: "all"
+  density: "compact"
+  style: "minimal"

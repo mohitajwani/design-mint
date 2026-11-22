@@ -1,0 +1,35 @@
+# Playful & Friendly Design System Preset
+name: "Bloom App"
+description: "Vibrant, friendly, rounded consumer design system"
+
+colors:
+  primary: "#EC4899"         # Bright Pink
+  secondary: "#8B5CF6"       # Violet
+  accent: "#FBBF24"          # Sunburst Yellow
+  neutral: "#6B7280"
+
+typography:
+  headingFont: "Outfit"
+  bodyFont: "Poppins"
+  monoFont: "JetBrains Mono"
+  baseSize: 16
+  scaleRatio: 1.333          # Perfect Fourth (dynamic contrast)
+
+spacing:
+  base: 4
+  scaleType: "linear"
+
+borders:
+  radius: "pill"             # Soft pill and heavy rounded corners
+
+accessibility:
+  compliance: "AA"
+  themes: ["light", "dark", "high-contrast"]
+  reducedMotion: true
+  minTouchTargetPx: 44
+  colorBlindSafe: true
+
+preferences:
+  mode: "all"
+  density: "spacious"
+  style: "playful"
