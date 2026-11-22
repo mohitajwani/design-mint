@@ -1,0 +1,48 @@
+{
+  "name": "designmint",
+  "version": "0.1.0",
+  "description": "Mint your design system in minutes. AI-powered design system generator with accessibility-first tokens, components, multi-platform export, and MCP integration.",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "test": "turbo run test",
+    "lint": "turbo run lint",
+    "clean": "turbo run clean",
+    "typecheck": "turbo run typecheck"
+  },
+  "keywords": [
+    "design-system",
+    "design-tokens",
+    "accessibility",
+    "wcag",
+    "mcp",
+    "figma",
+    "ui",
+    "tokens",
+    "palette",
+    "components",
+    "tailwind",
+    "css",
+    "ios",
+    "android",
+    "flutter"
+  ],
+  "author": "Mohit Ajwani",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mohitajwani/design-mint.git"
+  },
+  "devDependencies": {
+    "turbo": "^2.3.0",
+    "typescript": "^5.6.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "packageManager": "npm@10.8.2"
+}
