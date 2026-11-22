@@ -25,6 +25,7 @@ import { exportToJson, exportToDtcg } from '../exporters/json.js';
 import { exportToSwift } from '../exporters/ios.js';
 import { exportToAndroidXml, exportToCompose } from '../exporters/android.js';
 import { exportToFlutter } from '../exporters/flutter.js';
+import { exportToComposeMultiplatform, ComposeMultiplatformBundle } from '../exporters/compose-multiplatform.js';
 
 export interface DesignSystem {
   config: BrandConfig;
@@ -39,6 +40,7 @@ export interface DesignSystem {
     swift: () => string;
     androidXml: () => { colorsXml: string; dimensXml: string };
     compose: () => string;
+    composeMultiplatform: () => ComposeMultiplatformBundle;
     flutter: () => string;
   };
 }
@@ -128,6 +130,7 @@ export function generateDesignSystem(rawConfig: unknown): DesignSystem {
       swift: () => exportToSwift(tokens),
       androidXml: () => exportToAndroidXml(tokens),
       compose: () => exportToCompose(tokens),
+      composeMultiplatform: () => exportToComposeMultiplatform(tokens),
       flutter: () => exportToFlutter(tokens),
     },
   };

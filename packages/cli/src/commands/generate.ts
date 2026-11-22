@@ -75,6 +75,20 @@ export async function generateCommand(options: {
     console.log(`  ✓ Generated Android XML and Compose Theme: ${androidOut}`);
   }
 
+  // 5. Compose Multiplatform (Android, iOS, Desktop, Web)
+  if (platform === 'all' || platform === 'compose-multiplatform' || platform === 'cmp') {
+    const cmpOut = path.join(outDir, 'compose-multiplatform');
+    fs.mkdirSync(cmpOut, { recursive: true });
+
+    const bundle = ds.exporters.composeMultiplatform();
+    fs.writeFileSync(path.join(cmpOut, 'Color.kt'), bundle.colorKt);
+    fs.writeFileSync(path.join(cmpOut, 'Typography.kt'), bundle.typographyKt);
+    fs.writeFileSync(path.join(cmpOut, 'Shape.kt'), bundle.shapeKt);
+    fs.writeFileSync(path.join(cmpOut, 'Theme.kt'), bundle.themeKt);
+    fs.writeFileSync(path.join(cmpOut, 'Accessibility.kt'), bundle.accessibilityKt);
+    console.log(`  ✓ Generated Compose Multiplatform commonMain Suite: ${cmpOut}`);
+  }
+
   // 5. Flutter Export
   if (platform === 'all' || platform === 'flutter') {
     const flutterPath = path.join(outDir, 'app_theme.dart');

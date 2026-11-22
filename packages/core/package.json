@@ -27,6 +27,19 @@
       "import": "./dist/exporters/index.js"
     }
   },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mohitajwani/design-mint.git",
+    "directory": "packages/core"
+  },
   "scripts": {
     "build": "tsc",
     "dev": "tsc --watch",

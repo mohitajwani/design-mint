@@ -5,10 +5,23 @@
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "type": "module",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mohitajwani/design-mint.git",
+    "directory": "packages/figma-sync"
+  },
   "scripts": {
     "build": "tsc",
     "dev": "tsc --watch",
-    "test": "node --test dist/**/*.test.js",
+    "test": "node --test test/figma.test.js",
     "clean": "rm -rf dist",
     "typecheck": "tsc --noEmit"
   },

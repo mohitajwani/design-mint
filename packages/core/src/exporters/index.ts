@@ -8,3 +8,4 @@ export * from './json.js';
 export * from './ios.js';
 export * from './android.js';
 export * from './flutter.js';
+export * from './compose-multiplatform.js';

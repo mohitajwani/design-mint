@@ -144,7 +144,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => {
             brandName: { type: 'string', default: 'App' },
             platform: {
               type: 'string',
-              enum: ['css', 'tailwind', 'swift', 'compose', 'flutter', 'dtcg', 'json'],
+              enum: ['css', 'tailwind', 'swift', 'compose', 'compose-multiplatform', 'flutter', 'dtcg', 'json'],
               description: 'Target platform output',
             },
           },
@@ -300,6 +300,7 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
       else if (platform === 'tailwind') output = ds.exporters.tailwind();
       else if (platform === 'swift') output = ds.exporters.swift();
       else if (platform === 'compose') output = ds.exporters.compose();
+      else if (platform === 'compose-multiplatform') output = JSON.stringify(ds.exporters.composeMultiplatform(), null, 2);
       else if (platform === 'flutter') output = ds.exporters.flutter();
       else if (platform === 'dtcg') output = ds.exporters.dtcg();
       else output = ds.exporters.json();
